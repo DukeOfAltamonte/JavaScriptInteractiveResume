@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button type = "about" onclick = "showAbout()">
+About </button>
+<button type = "stats" onclick = "showStats()">
+Stats </button>
+<button type = "colorCh" onclick = "colorChange()">
+Color Change</button>
+
+<p id = "space"></p>
+<h1 id = "myName" style = "font-family:'Arial Black'">Thaddeus Jones</h1>
+<h2 id = "basicLoc" style = "font-family:'Arial Black'">Orlando, Florida</h2>
+Connect with me on <a href = "https://www.linkedin.com/in/thaddeus-jones-865069146/" target="blank">LinkedIn</a>
+<p id = "space"></p>
+
+
+<p id = "space"></p>
+
+Display or hide sections: 
+<button type = "button" onclick = "showExp()">Experience</button>
+<button type = "button" onclick = "showEdu()">Education</button>
+<button type = "button" onclick = "showSkill()">Skills</button>
+<p id = "space"></p>
+
+
+<div id = "showExperience" style = "display:none; font-family:'Trebuchet MS'">
+<canvas id="lineExpTop" width = "1000" height = "10" style="border:0px">
+____________________________________________________________</canvas>
+<h2 style="font-family:impact">Experience</h2>
+
+<div id = "showCompJob1" style = "text-align:center">
+</div>
+<div id = "showCompDates1" style = "text-align:center">
+</div>
+<div id = "showDutiesJob1">
+</div>
+
+<p id = "space"></p>
+<canvas id="lineExpComp1" width = "1000" height = "5" style="border:0px; position:relative; left:50%; margin-left: -200px;">
+___________________________</canvas>
+
+<div id = "showCompJob2" style = "text-align:center">
+</div>
+<div id = "showCompDates2" style = "text-align:center">
+</div>
+<div id = "showDutiesJob2">
+</div>
+
+<p id = "space"></p>
+<canvas id="lineExpComp2" width = "1000" height = "5" style="border:0px; position:relative; left:50%; margin-left: -200px;">
+___________________________</canvas>
+
+<div id = "showCompJob3" style = "text-align:center">
+</div>
+<div id = "showCompDates3" style = "text-align:center">
+</div>
+<div id = "showDutiesJob3">
+</div>
+
+<p id = "space"></p>
+<canvas id="lineExpComp3" width = "1000" height = "5" style="border:0px; position:relative; left:50%; margin-left: -200px;">
+___________________________</canvas>
+
+<div id = "showCompJob4" style = "text-align:center">
+</div>
+<div id = "showCompDates4" style = "text-align:center">
+</div>
+<div id = "showDutiesJob4">
+</div>
+
+<p id = "space"></p>
+<canvas id="lineExpComp4" width = "1000" height = "5" style="border:0px; position:relative; left:50%; margin-left: -200px;">
+___________________________</canvas>
+
+<div id = "showCompJob5" style = "text-align:center">
+</div>
+<div id = "showCompDates5" style = "text-align:center">
+</div>
+<div id = "showDutiesJob5">
+</div>
+
+<p id = "space"></p>
+<canvas id="lineExpComp5" width = "1000" height = "10" style="border:0px; position:relative; left:50%; margin-left: -200px;">
+___________________________</canvas>
+
+<div id = "showCompJob6" style = "text-align:center">
+</div>
+<div id = "showCompDates6" style = "text-align:center">
+</div>
+<div id = "showDutiesJob6">
+</div>
+
+<p id = "space"></p>
+<canvas id="lineExpBottom" width = "1000" height = "10" style="border:0px">
+____________________________________________________________</canvas>
+
+</div>
+
+
+
+<div id = "showEducation" style = "display:none; font-family:'Trebuchet MS'">
+<canvas id="lineEduTop" width = "1000" height = "10" style="border:0px">
+____________________________________________________________</canvas>
+<h2 style="font-family:impact">Education</h2>
+
+<div id = "showEduTitle1">
+</div>
+<div id = "showEduDate1">
+</div>
+<div id = "showEduDetail1">
+</div>
+
+<canvas id="lineEdu1" width = "1000" height = "5" style="border:0px">
+___________________________</canvas>
+
+
+<div id = "showEduTitle2">
+</div>
+<div id = "showEduDate2">
+</div>
+<div id = "showEduDetail2">
+</div>
+
+
+<canvas id="lineEduBottom" width = "1000" height = "10" style="border:0px;">
+____________________________________________________________</canvas>
+
+</div>
+
+
+<div id = "showSkill" style = "display:none; font-family:'Trebuchet MS'">
+<canvas id="lineSkillTop" width = "1000" height = "10" style="border:0px">
+____________________________________________________________</canvas>
+<h2 style="font-family:impact">Skills</h2>
+
+
+<div id = "showSkillDetail">
+</div>
+
+
+<canvas id="lineSkillBottom" width = "1000" height = "10" style="border:0px">
+____________________________________________________________</canvas>
+
+</div>
+
+
+
+
+<script>
+//Script by Thaddeus Jones, written Sept 2020
+//V1.0 - next version will probably have all Job Duty tables combined in one function instead of separate.
+
+
+  window.alert("Thank you for checking out my Resume!");
+  console.log("Script by Thaddeus Jones, written Sept 2020"); 
+  var expButtonDateTime;
+  var expButtonPress = 0;
+  var eduButtonDateTime;
+  var eduButtonPress = 0;
+  var skillButtonDateTime;
+  var skillButtonPress = 0;
+  var colorButtonDateTime;
+  var colorButtonPress = 0;
+  var colorRotation = 0;
+
+//About Button Clicked
+function showAbout() {
+  var alrtAboutMessage = "Script by Thaddeus Jones, written Sept 2020 \n" +
+               "This resume was made as a way to showcase different javascript code. \n"+
+               "There are probably better/easier ways to display data (I.E. hiding the full block of text rather than "+
+               "using arrays to hold text values to be written), but again, I wanted to showcase different javascript "+
+ 			   "coding methods. ";
+  window.alert(alrtAboutMessage);
+}
+
+
+
+//Stats Button Clicked
+function showStats() {
+  var dateRawInfo = Date();
+  var dayOfMonth = parseInt(dateRawInfo.substring(8,10)); //parseInt will remove leading 0 from dates < 10 as well as helping with day mod calculation
+  var dayOfWeek;
+  var dayOfMonthMod;
+  var dateMonthNameVals = ["January", "February", "March", "April", "May", "June",
+                           "July", "August", "September", "October", "November", "December"];
+  var dateMonthName = dateMonthNameVals[new Date().getMonth()];
+  var dateYear = dateRawInfo.substring(11,15); 
+  
+  var alrtStatMsg1 = "Today is ";
+  var alrtStatMsg2 = " the "; 
+  var alrtStatMsg3 = " of ";
+ 
+  
+  //Create the full day of the week instead of using 3 char Date() value - used to show switch usage in a script
+  switch (new Date().getDay()) {
+  case 0:
+    dayOfWeek = "Sunday";
+    break;
+  case 1:
+    dayOfWeek = "Monday";
+    break;
+  case 2:
+    dayOfWeek = "Tuesday";
+    break;
+  case 3:
+    dayOfWeek = "Wednesday";
+    break;
+  case 4:
+    dayOfWeek = "Thursday";
+    break;
+  case 5:
+    dayOfWeek = "Friday";
+    break;
+  case  6:
+    dayOfWeek = "Saturday";
+  default:
+    dayOfWeek = "Err";
+  }
+  
+  //Create the day of month modifier (st,nd,rd,th)
+  //I COULD use switch(true) for this but have heard that a nested If Then Else is actually faster (more optimized)
+  if ((dayOfMonth == 1) || (dayOfMonth == 21) || (dayOfMonth == 31)) {
+      dayOfMonthMod = "st";
+      } else if ((dayOfMonth == 2) || (dayOfMonth == 22)) {
+	  dayOfMonthMod = "nd";
+	  } else if ((dayOfMonth == 3) || (dayOfMonth == 23)) {
+	  dayOfMonthMod = "rd";
+	  } else {
+	  dayOfMonthMod = "th";
+	  }
+   
+  //Clean up expButtonDateTime and output if the buttons have not been pressed yet.   
+  if (expButtonDateTime === undefined) {
+   expButtonDateTime = "Button has not been pressed this session";
+   }
+  if (eduButtonDateTime === undefined) {
+   eduButtonDateTime = "Button has not been pressed this session";
+   }
+  if (skillButtonDateTime === undefined) {
+   skillButtonDateTime = "Button has not been pressed this session";
+   }
+  if (colorButtonDateTime === undefined) {
+   colorButtonDateTime = "Button has not been pressed this session";
+   } 
+ 
+ window.alert(alrtStatMsg1 + dayOfWeek + alrtStatMsg2 + dayOfMonth + dayOfMonthMod + alrtStatMsg3 + dateMonthName + " " + dateYear + 
+              "\n" + "\n" +
+              "Show/Hide Experience button pressed " + expButtonPress +" times. \n"+
+			  "Show/Hide Experience button last pressed on: \n" + 
+			  expButtonDateTime + "\n" + "\n" + 
+			  "Show/Hide Education button pressed " + eduButtonPress +" times. \n"+
+			  "Show/Hide Education button last pressed on: \n" + 
+			  eduButtonDateTime + "\n" + "\n" +
+			  "Show/Hide Skill button pressed " + skillButtonPress +" times. \n"+
+			  "Show/Hide Skill button last pressed on: \n" + 
+			  skillButtonDateTime + "\n" + "\n" +
+			  "Color change button pressed " + colorButtonPress +" times. \n"+
+			  "Color change button last pressed on: \n" + 
+			  colorButtonDateTime + "\n"
+			  
+			  );
+ 
+}
+  
+
+//Functions used to load job details, used in show/hide table button script
+function generateTableOne() {
+
+    var compbody = document.getElementById("showDutiesJob1");
+    let companyDuties = [
+    { name: "1", duty: "Utilized SQL and XML coding to implement reports in Cognos BI for UltiPro clients." },
+    { name: "1", duty: "Created reports directly in the Cognos BI tool when possible." },
+    { name: "1", duty: "Created server-side SQL SPs for exporting files if client needed format that UDES or BI could not " +
+                        "handle natively, such as pipe delimited, width format text, and odd file extension formats " +
+                        "(like .ASC). " },
+    { name: "1", duty: "Along with stored procedures, created functions for repetitive use calculations as well as temp \n" +
+                        "tables, permanent tables and views." },
+    { name: "1", duty: "Reworked old SQL code to optimize processing." },
+    { name: "1", duty: "Laid off due to company changing HCM vendors."}
+     ];
+
+	
+	comptable = document.createElement("table");
+	comptablebody = document.createElement("tbody");
+	
+	for (var j = 0; j < 6; j++) {
+	     
+		 current_row = document.createElement("tr");
+		 
+		 for (var i = 0; i < 2; i++) {
+		     
+			 current_cell = document.createElement("td");
+		     if (i == 0) {
+                currenttext = document.createTextNode("\u2022")
+                 }
+                 else if (i == 1) {				 
+			     currenttext = document.createTextNode(companyDuties[j].duty);
+                 }
+			 current_cell.appendChild(currenttext);
+			 current_row.appendChild(current_cell);
+			 
+		 }
+
+         comptablebody.appendChild(current_row);
+	 
+	}
+	
+    comptable.appendChild(comptablebody);
+	compbody.appendChild(comptable);
+	
+}
+
+
+function generateTableTwo() {
+
+
+    var compbody = document.getElementById("showDutiesJob2"); 
+    let companyDuties = [
+    { name: "2", duty: "Implemented clients on UltiPro HCM software." },
+    { name: "2", duty: "Handled configuration and consultation on a variety of HCM areas, such as PTO rules and GL." },
+    { name: "2", duty: "Imported client data. Occasionally would need to handle item at SQL level making table inserts" +
+ 	                   "or adjustments as needed." }
+     ];
+	
+	comptable = document.createElement("table");
+	comptablebody = document.createElement("tbody");
+	
+	for (var j = 0; j < 3; j++) {
+	     
+		 current_row = document.createElement("tr");
+		 
+		 for (var i = 0; i < 2; i++) {
+		     
+			 current_cell = document.createElement("td");
+		     if (i == 0) {
+                currenttext = document.createTextNode("\u2022")
+                 }
+                 else if (i == 1) {				 
+			     currenttext = document.createTextNode(companyDuties[j].duty);
+                 }
+			 current_cell.appendChild(currenttext);
+			 current_row.appendChild(current_cell);
+			 
+		 }
+
+         comptablebody.appendChild(current_row);
+	 
+	}
+	
+    comptable.appendChild(comptablebody);
+	compbody.appendChild(comptable);
+	
+}
+
+
+function generateTableThree() {
+
+    var compbody = document.getElementById("showDutiesJob3");
+    let companyDuties = [
+    { name: "3", duty: "Used client provided reproduction or setup documentation, and SQL select access to determine " +
+                       "solutions to issues with setup or improperly loaded data." },					   
+    { name: "3", duty: "Logged defects and enhancement requests." },
+    { name: "3", duty: "Pulled server logs for issues, when applicable." },
+    { name: "3", duty: "Interacted with cross-functional personnel to securely correct data issues (via SQL datafix " +
+                       "scripts) and pull finer logging on select server types." },
+    { name: "3", duty: "Trained on core system, with specialization in time/labor and attendance products." },
+    { name: "3", duty: "Helped third party vendors and partners with their implementation and formatting of JSON " +
+                       "coding to integrate timekeeping collection devices."}
+     ];
+
+	
+	comptable = document.createElement("table");
+	comptablebody = document.createElement("tbody");
+	
+	for (var j = 0; j < 6; j++) {
+	     
+		 current_row = document.createElement("tr");
+		 
+		 for (var i = 0; i < 2; i++) {
+		     
+			 current_cell = document.createElement("td");
+		     if (i == 0) {
+                currenttext = document.createTextNode("\u2022")
+                 }
+                 else if (i == 1) {				 
+			     currenttext = document.createTextNode(companyDuties[j].duty);
+                 }
+			 current_cell.appendChild(currenttext);
+			 current_row.appendChild(current_cell);
+			 
+		 }
+
+         comptablebody.appendChild(current_row);
+	 
+	}
+	
+    comptable.appendChild(comptablebody);
+	compbody.appendChild(comptable);
+	
+}
+
+
+function generateTableFour() {
+
+    var compbody = document.getElementById("showDutiesJob4");
+    let companyDuties = [
+    { name: "4", duty: "Functional testing performed on web-based Workforce Management (EmpowerWFM) and " +
+                       "timekeeping (EmpowerTime v10) applications." },					   
+    { name: "4", duty: "Performed replication on incoming defect items in the development queue, and verification of " +
+                       "resolution from development outgoing to Support or Professional Services." },
+	{ name: "4", duty: "Managed multiple instances between SQL 2008 and 2012, as well as URL creation on an IIS " +
+                       "server for testing setup, shrinking log files and verifying data and tables." },					   
+    { name: "4", duty: "In January 2016, Empower Software Solutions was purchased by Kronos Incorporated. I was laid off " +
+	                   "during this company transition as my position was no longer required." }
+     ];
+
+	
+	comptable = document.createElement("table");
+	comptablebody = document.createElement("tbody");
+	
+	for (var j = 0; j < 4; j++) {
+	     
+		 current_row = document.createElement("tr");
+		 
+		 for (var i = 0; i < 2; i++) {
+		     
+			 current_cell = document.createElement("td");
+		     if (i == 0) {
+                currenttext = document.createTextNode("\u2022")
+                 }
+                 else if (i == 1) {				 
+			     currenttext = document.createTextNode(companyDuties[j].duty);
+                 }
+			 current_cell.appendChild(currenttext);
+			 current_row.appendChild(current_cell);
+			 
+		 }
+
+         comptablebody.appendChild(current_row);
+	 
+	}
+	
+    comptable.appendChild(comptablebody);
+	compbody.appendChild(comptable);
+	
+}
+
+
+function generateTableFive() {
+
+    var compbody = document.getElementById("showDutiesJob5");
+    let companyDuties = [
+    { name: "5", duty: "Managed client-driven projects involving new implementations, preexisting installation " +
+                       "modifications and server migrations for EmpowerTime v9 timekeeping software." },
+    { name: "5", duty: "Set up all aspects of the software - from the core timekeeping rules, to imports and exports, " +
+                       "custom reporting, custom SQL scripting, points, and benefits management systems." },
+    { name: "5", duty: "Lead client through full rollout process including install, staff training, testing, support, " +
+                       "and hardware interaction setup." },					   
+    { name: "5", duty: "Implemented and supported C# code for export and import file processes – to handle " +
+                       "formatting and calculations in these files outside the settings built into the interfaces." }
+     ];
+
+	
+	comptable = document.createElement("table");
+	comptablebody = document.createElement("tbody");
+	
+	for (var j = 0; j < 4; j++) {
+	     
+		 current_row = document.createElement("tr");
+		 
+		 for (var i = 0; i < 2; i++) {
+		     
+			 current_cell = document.createElement("td");
+		     if (i == 0) {
+                currenttext = document.createTextNode("\u2022")
+                 }
+                 else if (i == 1) {				 
+			     currenttext = document.createTextNode(companyDuties[j].duty);
+                 }
+			 current_cell.appendChild(currenttext);
+			 current_row.appendChild(current_cell);
+			 
+		 }
+
+         comptablebody.appendChild(current_row);
+	 
+	}
+	
+    comptable.appendChild(comptablebody);
+	compbody.appendChild(comptable);
+	
+}
+
+
+function generateTableSix() {
+
+    var compbody = document.getElementById("showDutiesJob6");
+    let companyDuties = [
+    { name: "6", duty: "Supported UniTime v5-v8 and EmpowerTime v9 timekeeping software." },
+    { name: "6", duty: "Worked with SQL databases, the proprietary GUI, server environments (2000, 2003, 2008, " +
+                       "2012), workstation environments, and clock hardware (Ethernet, modem, and direct connect " +
+                       "types). In SQL would have to occasionally handle test environment and client environment " +
+                       "upkeep including shrinking or restarting log files and verifying data and tables." },
+  	{ name: "6", duty: "Helped optimize software and customize reports based on client needs." },	
+    { name: "6", duty: "Used SQL queries to reflect report output as workaround for some clients." },
+	{ name: "6", duty: "Created technical articles in the Support Portal." },
+	{ name: "6", duty: "Basic Import and Export interface troubleshooting." },
+	{ name: "6", duty: "As a CSR II & III, additional senior duties included:" },	
+    { name: "6", duty: "   \u2023  Facilitating staff training." },
+    { name: "6", duty: "   \u2023  Supervising and leading the CSR I team." },
+    { name: "6", duty: "   \u2023  Approving technical articles and creating higher level articles." },
+    { name: "6", duty: "   \u2023  Handling escalated issues." },	
+    { name: "6", duty: "   \u2023  Coordinating with personnel cross functionally to attain resolutions for our clients." },
+    { name: "6", duty: "   \u2023  Created and maintained a hardware lab to get time clocks and DIDO devices." },
+    { name: "6", duty: "   \u2023  Support of custom C# coding in Import and Export interfaces." }					   				   
+     ];
+
+	
+	comptable = document.createElement("table");
+	comptablebody = document.createElement("tbody");
+	
+	for (var j = 0; j < 14; j++) {
+	     
+		 current_row = document.createElement("tr");
+		 
+		 for (var i = 0; i < 2; i++) {
+		     
+			 current_cell = document.createElement("td");		 
+			if ((i == 0) && (j < 7)) { 
+                currenttext = document.createTextNode("\u2022");
+                 }	 
+				 else if ((i == 0) && (j >= 7)) {
+				 currenttext = document.createTextNode(" "); 
+				 } 
+                 else if (i == 1) {				 
+			     currenttext = document.createTextNode(companyDuties[j].duty);
+                 }
+			 current_cell.appendChild(currenttext);
+			 current_row.appendChild(current_cell);
+			 
+		 }
+
+         comptablebody.appendChild(current_row);
+	 
+	}
+	
+    comptable.appendChild(comptablebody);
+	compbody.appendChild(comptable);
+	
+}
+
+//Functions above used to load job details, used in show/hide table button script
+
+
+//Generate skill table 
+function generateTableSkill() {
+
+    var compbody = document.getElementById("showSkillDetail");
+    var skillDetailList = [ 
+	  "Visual Basic, C#, C++, Pascal, JSON, JavaScript, XML, CSS and HTML",
+	  "Programming Methodologies (arrays, loops, if and case statements, varaible calculations)",
+	  "SQL Server 2008, 2012, 2016",
+	  "SQL Querying (selects, updates, inserts, joins)",
+      "SQL DB Management (log truncation/replacement, db restores and backups, username security and mapping)",
+	  "SQL Data Storage and Manipulation (Tables, Views, Temp Tables, Stored Procedures, Functions)",
+      "Common integration file types (fixed width format, pipe delimited)",
+	  "Networks and Network hardware (routers, switches, wireless, time clocks, DIDO devices)",
+	  "ODBC connections",
+	  "Cognos 11, Crystal Reports",
+      "UltiPro, EmpowerTime, EmpowerWFM, UniTime",
+      "MSOffice Suite (Excel/Word/Access/Outlook/PowerPoint)",
+	  "Virtual machine creation and administration (VMWare, Virtualbox)",
+	  "Connectivity tools (LogMeIn, GoToAssist, GoToMeeting, TeamViewer)"    					   				   
+     ];
+
+	
+	comptable = document.createElement("table");
+	comptablebody = document.createElement("tbody");
+	
+	for (var j = 0; j < 7; j++) {
+	     
+		 current_row = document.createElement("tr");
+		 
+		 for (var i = 0; i < 4; i++) {
+		     
+			 current_cell = document.createElement("td");
+  			 
+			if ((i == 0) || (i == 2)) { 
+                currenttext = document.createTextNode("\u2022");
+                 }	 
+                 else if (i == 1) {				 
+			     currenttext = document.createTextNode(skillDetailList[j]);
+                 }
+				 else if (i == 3) {
+				 currenttext = document.createTextNode(skillDetailList[j+7]);
+                 }
+				 
+			 current_cell.appendChild(currenttext);
+			 current_row.appendChild(current_cell);
+			 
+		 }
+
+         comptablebody.appendChild(current_row);
+	 
+	}
+	
+    comptable.appendChild(comptablebody);
+	compbody.appendChild(comptable);
+	
+}
+
+
+
+
+
+//Show or Hide Experience button clicked
+function showExp() {
+  
+ 
+  expButtonDateTime = Date();
+  expButtonPress = ++expButtonPress;  
+  
+  var expCompList = ["PlanSource","Oracle Corp","Empower Software Solutions"];
+  var expTitleList = ["HCM Report Developer (Remote)","HCM Implementation Consultant","Support Engineer2","QA Technician","Associate Implementation Specialist","Client Support Rep I/II/III"];
+  var expDateList = ["March 2018 - February 2020", "September 2017 - March 2018", "February 2016 - June 2017",
+                     "August 2013 - January 2016", "October 2012 - August 2013", "May 2009 - October 2012"];
+  var expOneList = {compName:expCompList[0],jobName:expTitleList[0]};
+  var expTwoList = {compName:expCompList[0],jobName:expTitleList[1]};
+  var expThreeList = {compName:expCompList[1],jobName:expTitleList[2]};
+  var expFourList = {compName:expCompList[2],jobName:expTitleList[3]};
+  var expFiveList = {compName:expCompList[2],jobName:expTitleList[4]};
+  var expSixList = {compName:expCompList[2],jobName:expTitleList[5]};
+  
+  
+  //Show or Hide mechanics
+  var x = document.getElementById("showExperience");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  
+  //Draw seperation lines
+  var l = document.getElementById("lineExpTop");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(1000, 0);
+  lineAll.stroke();
+  
+  var l = document.getElementById("lineExpBottom");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(1000, 0);
+  lineAll.stroke();
+   
+  
+  var l = document.getElementById("lineExpComp1");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(400, 0);
+  lineAll.stroke();
+  
+  var l = document.getElementById("lineExpComp2");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(400, 0);
+  lineAll.stroke();
+  
+  var l = document.getElementById("lineExpComp3");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(400, 0);
+  lineAll.stroke();
+  
+  var l = document.getElementById("lineExpComp4");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(400, 0);
+  lineAll.stroke();
+  
+  var l = document.getElementById("lineExpComp5");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(400, 0);
+  lineAll.stroke();
+  
+  //Fill Experience Job and Title
+  document.getElementById("showCompJob1").innerHTML = expOneList.compName.bold() + " - " 
+            + expOneList.jobName;
+  document.getElementById("showCompDates1").innerHTML = expDateList[0].italics(); 
+			
+  document.getElementById("showCompJob2").innerHTML = expTwoList.compName.bold() + " - " 
+            + expTwoList.jobName;
+  document.getElementById("showCompDates2").innerHTML = expDateList[1].italics(); 			
+  
+  document.getElementById("showCompJob3").innerHTML = expThreeList.compName.bold() + " - " 
+            + expThreeList.jobName;
+  document.getElementById("showCompDates3").innerHTML = expDateList[2].italics(); 			
+			
+  document.getElementById("showCompJob4").innerHTML = expFourList.compName.bold() + " - " 
+            + expFourList.jobName;
+  document.getElementById("showCompDates4").innerHTML = expDateList[3].italics(); 			
+			
+  document.getElementById("showCompJob5").innerHTML = expFiveList.compName.bold() + " - " 
+            + expFiveList.jobName;		
+  document.getElementById("showCompDates5").innerHTML = expDateList[4].italics(); 			
+  
+  document.getElementById("showCompJob6").innerHTML = expSixList.compName.bold() + " - " 
+            + expSixList.jobName;
+  document.getElementById("showCompDates6").innerHTML = expDateList[5].italics(); 			
+  
+  //Fill Experience details only once
+  if  (expButtonPress < 2) { 
+       generateTableOne();
+	   generateTableTwo();
+	   generateTableThree();
+	   generateTableFour();
+	   generateTableFive();
+	   generateTableSix();
+    }
+  
+  
+  
+ } 
+
+//Show or Hide Education button clicked  
+function showEdu() {
+  
+ 
+  eduButtonDateTime = Date();
+  eduButtonPress = ++eduButtonPress;  
+
+ 
+  var eduDateList = ["2001 - 2003","December 2008"];
+  var eduTitleList = ["Seminole Community College","CompTIA"];
+  var eduDetailList = ["Studied computer programming and computer graphics.","A+ Certification (#COMP001008129074)"];
+
+/*
+  var expOneList = {compName:expCompList[0],jobName:expTitleList[0]};
+  var expTwoList = {compName:expCompList[0],jobName:expTitleList[1]};
+  var expThreeList = {compName:expCompList[1],jobName:expTitleList[2]};
+  var expFourList = {compName:expCompList[2],jobName:expTitleList[3]};
+  var expFiveList = {compName:expCompList[2],jobName:expTitleList[4]};
+  var expSixList = {compName:expCompList[2],jobName:expTitleList[5]};
+ */ 
+  
+  //Show or Hide mechanics
+  var x = document.getElementById("showEducation");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  
+  //Draw section seperation lines
+  var l = document.getElementById("lineEduTop");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(1000, 0);
+  lineAll.stroke();
+  
+  var l = document.getElementById("lineEduBottom");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(1000, 0);
+  lineAll.stroke();
+  
+  var l = document.getElementById("lineEdu1");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(400, 0);
+  lineAll.stroke();
+  
+  
+  //Fill Education data
+  document.getElementById("showEduDate1").innerHTML = eduDateList[0].italics();
+  document.getElementById("showEduTitle1").innerHTML = eduTitleList[0].bold();
+  document.getElementById("showEduDetail1").innerHTML = " \u2022 " + eduDetailList[0];
+  document.getElementById("showEduDate2").innerHTML = eduDateList[1].italics();
+  document.getElementById("showEduTitle2").innerHTML = eduTitleList[1].bold();
+  document.getElementById("showEduDetail2").innerHTML = " \u2022 " + eduDetailList[1];
+  
+  }
+  
+//Show or Hide Skill button clicked  
+function showSkill() {
+  
+  skillButtonDateTime = Date();
+  skillButtonPress = ++skillButtonPress;    
+  
+	
+  //Draw section seperation lines
+  var l = document.getElementById("lineSkillTop");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(1000, 0);
+  lineAll.stroke();
+  
+  var l = document.getElementById("lineSkillBottom");
+  var lineAll = l.getContext("2d");
+  lineAll.beginPath();
+  lineAll.moveTo(0, 0);
+  lineAll.lineTo(1000, 0);
+  lineAll.stroke();
+	
+	
+  //Show or Hide mechanics
+  var x = document.getElementById("showSkill");
+  if (x.style.display === "none") {
+      x.style.display = "block";
+  } else {
+      x.style.display = "none";
+  }
+	
+  //Generate Skill Table only once
+  if  (skillButtonPress < 2) { 
+    generateTableSkill();
+  }
+  
+}
+  
+
+function colorChange(){
+  colorButtonDateTime = Date();
+  colorButtonPress = ++colorButtonPress;  
+  colorRotation = ++colorRotation;
+  
+  if (colorRotation > 3) { colorRotation = 0; }
+  
+  if (colorRotation == 0)  {
+    document.body.style.backgroundColor = "#FFFFFF";
+  document.body.style.color = "#000000";
+  }   
+  if (colorRotation == 1)  {
+  document.body.style.backgroundColor = "#0000FF";
+  document.body.style.color = "#CCFFFF";
+  }
+  if (colorRotation == 2)  {
+  document.body.style.backgroundColor = "#993300";
+  document.body.style.color = "#FFCC66";
+  }
+  if (colorRotation == 3)  {
+  document.body.style.backgroundColor = "#00802B";
+  document.body.style.color = "#CCFF99";
+  }
+  
+  
+}  
+
+
+
+</script>
+
+
+</body>
+</html> 
