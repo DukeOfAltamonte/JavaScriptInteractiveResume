@@ -13,7 +13,7 @@ Color Change</button>
 <h2 id = "basicLoc" style = "font-family:'Arial Black'">Orlando, Florida</h2>
 Connect with me on <a href = "https://www.linkedin.com/in/thaddeus-jones-865069146/" target="blank">LinkedIn</a>
 <p id = "space"></p>
-
+Email:<a href = "mailto:taddj0112@yahoo.com">taddj0112@yahoo.com </a>
 
 <p id = "space"></p>
 
@@ -269,14 +269,20 @@ function generateTableOne() {
 
     var compbody = document.getElementById("showDutiesJob1");
     let companyDuties = [
-    { name: "1", duty: "Utilized SQL and XML coding to implement reports in Cognos BI for UltiPro clients." },
-    { name: "1", duty: "Created reports directly in the Cognos BI tool when possible." },
-    { name: "1", duty: "Created server-side SQL SPs for exporting files if client needed format that UDES or BI could not " +
-                        "handle natively, such as pipe delimited, width format text, and odd file extension formats " +
-                        "(like .ASC). " },
-    { name: "1", duty: "Along with stored procedures, created functions for repetitive use calculations as well as temp \n" +
-                        "tables, permanent tables and views." },
-    { name: "1", duty: "Reworked old SQL code to optimize processing." },
+    { name: "1", duty: "Handled BI Report projects from end to end, starting with scope documentation presented to " +
+                       "client for sign-off to project completion." },
+    { name: "1", duty: "Utilized SQL and XML files to implement reports in Cognos BI for UltiPro clients." },
+	{ name: "1", duty: "Created reports directly in the Cognos BI tool when possible, for some outliers created serverside " +
+  	                   "SQL stored procedures and functions for exporting files if client needed format that UDES " +
+                       "or BI could not handle, such as pipe delimited, width format text, and odd file extension " +
+                       "formats." },					   
+    { name: "1", duty: "Reworked older BI and SQL code to optimize processing for completed projects." },
+    { name: "1", duty: "Worked on internal PlanSource reports for executives on a company level of reporting as well " +
+                       "as multi tenant or single client projects." },
+	{ name: "1", duty: "When Senior Report Developer position was eliminated I took over a lot of the job duties " +
+                       "previously handled by that position." },
+    { name: "1", duty: "When required for export file data - worked directly with vendors when possible using their " +
+                       "formatting documentation. Included vendors on regular project touch point meetings." },				   
     { name: "1", duty: "Laid off due to company changing HCM vendors."}
      ];
 
@@ -284,7 +290,7 @@ function generateTableOne() {
 	comptable = document.createElement("table");
 	comptablebody = document.createElement("tbody");
 	
-	for (var j = 0; j < 6; j++) {
+	for (var j = 0; j < 8; j++) {
 	     
 		 current_row = document.createElement("tr");
 		 
@@ -317,16 +323,25 @@ function generateTableTwo() {
 
     var compbody = document.getElementById("showDutiesJob2"); 
     let companyDuties = [
-    { name: "2", duty: "Implemented clients on UltiPro HCM software." },
-    { name: "2", duty: "Handled configuration and consultation on a variety of HCM areas, such as PTO rules and GL." },
-    { name: "2", duty: "Imported client data. Occasionally would need to handle item at SQL level making table inserts" +
- 	                   "or adjustments as needed." }
+    { name: "2", duty: "Implemented clients on UltiPro HCM software – all projects under my independent " +
+                       "management were at go-live on time and inside budget. Handled 5-10 projects at a time. Some, " +
+                       "commonly for larger clients, were multi tiered roll-outs that were for specific divisions at a time." },
+    { name: "2", duty: "Handled imports, configuration and consultation on a variety of HCM areas, such as PTO rules " +
+                       "and GL." },
+    { name: "2", duty: "Imported client data based on reviewed worksheets provided to and completed by client. " +
+                       "Occasionally would need to handle items at SQL level making table inserts or adjustments as " +
+                       "needed." },
+	{ name: "2", duty: "Utilized Smartsheets and excel workbooks for internal and client facing project tracking. Had " +
+                       "regular meetings with client group to review implementation status and provide software setup " +
+                       "and usage guidance." },				     
+    { name: "2", duty: "On items outside of group scope (such as BI reports), worked with appropriate departments to " +
+                       "provide those required items."}
      ];
 	
 	comptable = document.createElement("table");
 	comptablebody = document.createElement("tbody");
 	
-	for (var j = 0; j < 3; j++) {
+	for (var j = 0; j < 5; j++) {
 	     
 		 current_row = document.createElement("tr");
 		 
@@ -359,7 +374,7 @@ function generateTableThree() {
     var compbody = document.getElementById("showDutiesJob3");
     let companyDuties = [
     { name: "3", duty: "Used client provided reproduction or setup documentation, and SQL select access to determine " +
-                       "solutions to issues with setup or improperly loaded data." },					   
+                       "solutions to issues with setup or improperly loaded data." },								   
     { name: "3", duty: "Logged defects and enhancement requests." },
     { name: "3", duty: "Pulled server logs for issues, when applicable." },
     { name: "3", duty: "Interacted with cross-functional personnel to securely correct data issues (via SQL datafix " +
@@ -410,7 +425,8 @@ function generateTableFour() {
     { name: "4", duty: "Performed replication on incoming defect items in the development queue, and verification of " +
                        "resolution from development outgoing to Support or Professional Services." },
 	{ name: "4", duty: "Managed multiple instances between SQL 2008 and 2012, as well as URL creation on an IIS " +
-                       "server for testing setup, shrinking log files and verifying data and tables." },					   
+                       "server for testing setup, shrinking log files and verifying data and tables." },			
+    { name: "4", duty: "Reviewed SOAP (via SoapUI) for certain processes to verify data movement was correct." },					   
     { name: "4", duty: "In January 2016, Empower Software Solutions was purchased by Kronos Incorporated. I was laid off " +
 	                   "during this company transition as my position was no longer required." }
      ];
@@ -453,19 +469,23 @@ function generateTableFive() {
     let companyDuties = [
     { name: "5", duty: "Managed client-driven projects involving new implementations, preexisting installation " +
                        "modifications and server migrations for EmpowerTime v9 timekeeping software." },
-    { name: "5", duty: "Set up all aspects of the software - from the core timekeeping rules, to imports and exports, " +
-                       "custom reporting, custom SQL scripting, points, and benefits management systems." },
-    { name: "5", duty: "Lead client through full rollout process including install, staff training, testing, support, " +
-                       "and hardware interaction setup." },					   
-    { name: "5", duty: "Implemented and supported C# code for export and import file processes – to handle " +
-                       "formatting and calculations in these files outside the settings built into the interfaces." }
+    { name: "5", duty: "Set up all aspects of the software - from the core timekeeping rules, to imports and exports " +
+                       "(sometimes including custom C# coding), custom reporting, custom SQL scripting, points, and " +
+                       "benefits management systems." },		   
+    { name: "5", duty: "Lead client through full roll-out process including install, staff training, testing, support, and " +
+                       "hardware interaction setup." },				
+	{ name: "5", duty: "On occasion when client could not handle their own staff training, would provide virtual and in " +
+                       "person staff training sessions at client expense (upwards of 200 trainees in multiple sessions if " +
+                       "over 50 at a time)." },
+    { name: "5", duty: "Handled overlap of data processing with EmpowerPay software with a member of that implementation " +
+	                   "team. Made sure that correct data flowed between programs for accurate payroll processing." }
      ];
 
 	
 	comptable = document.createElement("table");
 	comptablebody = document.createElement("tbody");
 	
-	for (var j = 0; j < 4; j++) {
+	for (var j = 0; j < 5; j++) {
 	     
 		 current_row = document.createElement("tr");
 		 
@@ -558,13 +578,13 @@ function generateTableSkill() {
 
     var compbody = document.getElementById("showSkillDetail");
     var skillDetailList = [ 
-	  "Visual Basic, C#, C++, Pascal, JSON, JavaScript, XML, CSS and HTML",
+	  "Visual Basic, C#, C++, JavaScript, JSON, XML, CSS and HTML",
 	  "Programming Methodologies (arrays, loops, if and case statements, varaible calculations)",
 	  "SQL Server 2008, 2012, 2016",
 	  "SQL Querying (selects, updates, inserts, joins)",
       "SQL DB Management (log truncation/replacement, db restores and backups, username security and mapping)",
 	  "SQL Data Storage and Manipulation (Tables, Views, Temp Tables, Stored Procedures, Functions)",
-      "Common integration file types (fixed width format, pipe delimited)",
+      "Common integration file types (fixed width format, pipe delimited, comma delimited)",
 	  "Networks and Network hardware (routers, switches, wireless, time clocks, DIDO devices)",
 	  "ODBC connections",
 	  "Cognos 11, Crystal Reports",
